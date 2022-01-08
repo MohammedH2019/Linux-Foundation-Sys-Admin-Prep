@@ -127,3 +127,20 @@ First column shows  which user is logged into system and the second one to which
 * `find . -atime +1` 
 
   * Show all files accessed at least two days ago (more than 24 hours)
+
+* `find . -group developer` 
+
+  * Show all files that are owned by the group named developer
+
+* `find . -nouser -nogroup` 
+
+  * Show all files/folder that have no user or group.
+
+* `find . -empty ` 
+
+  * Show all files/folder that are empty
+
+* `find . -ctime -60` 
+
+  * Show all files that have been changed in the last 60 min
+
