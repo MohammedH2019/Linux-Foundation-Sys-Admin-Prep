@@ -60,7 +60,8 @@ useradd
 
 *` useradd tecmint` This will add a new user called 'tecmint'
 * `passwd tecmint` this will unlock the user tecmint and will set a password
-* `useradd -m  -d /data/projects tecmin` this will create a new home directory for tecmint 
+* `useradd -m  tecmin` this will create a  home directory for tecmint and user account -m is set to /home in the /etc/defaults/useradd config
+* `userradd -m -d /var/www tecmint` this will create a new home directory specified
 * `useradd -M tecmint` this will create no home directory for tecmint
 * `useradd -e 2022-06-27 tecmint` this will create a expiry date on the user tecmint account **NOTE** you can verify the change by running `chage -l tecmint`
 * `useradd -e 2022-06-27 -f 45 tecmint` this will create a expiry date on the user + a password expiry for 45 days
