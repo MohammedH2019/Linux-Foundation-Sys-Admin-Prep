@@ -261,9 +261,9 @@ SED command in UNIX stands for stream editor and it can perform lots of function
  * `tar -xvf file.tar --wildcards '*.php'*`
     extract a php files from tar
  
- * ` tar -zxvf file.tar.gz --wildcards '*.php'*`
+ * ` tar -zxvf file.tar.gz --wildcards '*.php'`
     extract a php files from gzip
  
- * ` tar -jxvf file.tar.gz --wildcards '*.php'*`
+ * ` tar -jxvf file.tar.gz --wildcards '*.php'`
     extract a php files from bzip
      
