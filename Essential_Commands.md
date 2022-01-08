@@ -238,4 +238,32 @@ SED command in UNIX stands for stream editor and it can perform lots of function
 
 
 * sed '/PATTERN/ i <LINE-TO-BE-ADDED>' FILE.txt
-   
+
+ 
+## Archive,compress and uncompress files
+ 
+* `tar` Save many files into a single file
+
+  File permissions are maintained by default only for file users. For other user I must explicit say to maintain permission during decompression using `-p` parameter
+
+  * `tar jcfv file.tar.bz2 *`
+
+    Save all files of current directory in new bzip2 compressed file called file.tar.bz2
+
+  * `tar jxfv file.tar.bz2`
+
+    Extract content of file.tar.bz2
+ 
+ * `tar -rvf file.tar xyz.txt *`
+    Add xyz.txt to the existing tar file. 
+    You cannot add file to a bzip using the tar command
+ 
+ * `tar -xvf file.tar --wildcards '*.php'*`
+    extract a php files from tar
+ 
+ * ` tar -zxvf file.tar.gz --wildcards '*.php'*`
+    extract a php files from gzip
+ 
+ * ` tar -jxvf file.tar.gz --wildcards '*.php'*`
+    extract a php files from bzip
+     
