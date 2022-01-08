@@ -185,3 +185,12 @@ Regular Expressions
 
 * Not all regular expressions are supported by `grep`. As alternative can be used `egrep`
 
+## Sed command
+SED command in UNIX stands for stream editor and it can perform lots of functions on file like searching, find and replace, insertion or deletion. Though most common use of SED command in UNIX is for substitution or for find and replace.
+
+* `sed OPTIONS... [SCRIPT] [INPUTFILE...]*`
+
+* `sed 's/source/target/' file`
+
+  In any row of file, it will change first occurrence of source to target. Print all rows e.g 
+  * `sed 's/james/davids/' file1.txt` - will replace the first occurence of james to davids in the file1.txt
