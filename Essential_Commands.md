@@ -271,5 +271,5 @@ SED command in UNIX stands for stream editor and it can perform lots of function
  * ` tar jxvf file.tar.gz --wildcards '*.php'`
     extract a php files from bzip
    
- * ` tar xvf file.tar -C /home/user 
+ * ` tar xvf file.tar -C /home/user `
     extract the tar file into the home user folder
