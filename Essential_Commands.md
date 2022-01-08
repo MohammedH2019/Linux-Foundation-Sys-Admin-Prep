@@ -228,7 +228,14 @@ SED command in UNIX stands for stream editor and it can perform lots of function
     It will insert newline as line 3
     * `sed '3 i hello' file.txt` = will insert hello in line 3 in file.txt
 
+* ` sed ' /pattern/ i newline' file.txt`
+   it will insert a new line before every line in which the pattern matches
+   * ` sed '/8/ i hello' file.txt = will insert hello before wherever it see the number 8 in the file.txt 
+
 * ' sed ' 3 a newline' file.txt `
    it will append a new line after the 3rd line
    * `sed '3 a hello' file.txt` = will append hello after line 3 in file.txt
+
+
+* sed '/PATTERN/ i <LINE-TO-BE-ADDED>' FILE.txt
    
