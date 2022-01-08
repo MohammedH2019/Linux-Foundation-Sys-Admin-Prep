@@ -185,6 +185,10 @@ Regular Expressions
 
 * Not all regular expressions are supported by `grep`. As alternative can be used `egrep`
 
+example:
+* ` grep '^.[pr]' file1.txt
+   looks for lines where the second character is either p or in the file1.txt
+
 ## Sed command
 SED command in UNIX stands for stream editor and it can perform lots of functions on file like searching, find and replace, insertion or deletion. Though most common use of SED command in UNIX is for substitution or for find and replace.
 
