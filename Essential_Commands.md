@@ -193,4 +193,38 @@ SED command in UNIX stands for stream editor and it can perform lots of function
 * `sed 's/source/target/' file`
 
   In any row of file, it will change first occurrence of source to target. Print all rows e.g 
-  * `sed 's/james/davids/' file1.txt` - will replace the first occurence of james to davids in the file1.txt
+  * `sed 's/james/davids/' file1.txt` - will replace the first occurence in the row of james to davids in the file1.txt
+
+* `sed 's/source/target/g' file`
+
+  In any row of file, it will change all occurrences of source to target. Print all rows
+
+* `sed 's/source/target/gI'`
+
+  In any row of file, it will change all occurrences of source to target. Ignore case = case insensitive. Print all rows
+    
+  
+* `sed -n '/source/p' file` 
+
+  It will print only rows that contain source
+
+  It is equal to grep source file
+  * `sed -n 2,4p file` 
+
+    It prints rows from 2 to 4
+
+* `sed '/source/d' file`
+
+   Delete rows with source
+   
+   * 'sed '2,$d' a.txt = will delete from the second line till the end of the file in a.txt
+
+* `sed -n 12d file`
+
+   Delete row 12
+   
+* `sed '3 i newline' file`
+
+    It will insert newline as line 3
+    * `sed '3 i hello' file.txt` = will insert hello in line 3 in file.txt
+    
