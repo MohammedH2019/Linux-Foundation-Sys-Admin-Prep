@@ -56,10 +56,23 @@ useradd
     * Normally password is not provided during user add
   * `-s` shell to use
   
-* examples:
+* examples useradd command :
 
-*` 
+*` useradd tecmint` This will add a new user called 'tecmint'
+* `passwd tecmint` this will unlock the user tecmint and will set a password
+* `useradd -m  -d /data/projects tecmin` this will create a new home directory for tecmint 
+* `useradd -M tecmint` this will create no home directory for tecmint
+* `useradd -e 2022-06-27 tecmint` this will create a expiry date on the user tecmint account **NOTE** you can verify the change by running `chage -l tecmint`
+* `useradd -e 2022-06-27 -f 45 tecmint` this will create a expiry date on the user + a password expiry for 45 days
+* `useradd -s /bin/zsh tecmint` this will create a user login shell zsh for tecmint
+* `useradd -s /bin/false -c "no shell" tecmint` this will create a no shell for tecmint and a comment is added
   
+
+* examples usermod command:
+
+* ` usermod -aG sudo tecmint` this will add tecmint to the sudo group.
+* ` usermod -d /var/www/ tecmint` this will change tecmint home directory
+* ` usermod -g test tecmint` this will set test as the primary directory for tecmint
 
 * When a user is created two file will be changed:
 
