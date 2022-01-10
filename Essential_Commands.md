@@ -240,9 +240,36 @@ SED command in UNIX stands for stream editor and it can perform lots of function
    it will append a new line after the 3rd line
    * `sed '3 a hello' file.txt` = will append hello after line 3 in file.txt
 
+## AWK command
 
-* sed '/PATTERN/ i <LINE-TO-BE-ADDED>' FILE.txt
+awk works on programs that contain rules comprised of patterns and actions. The action is executed on the text that matches the pattern. Patterns are enclosed in curly braces ({}). Together, a pattern and an action form a rule. The entire awk program is enclosed in single quotes (').
 
+
+* `who | awk '{print $1,$4}' `
+   This will print out the first 4 fields from the who command 
+  
+speical field identifiers:
+* ` $0 ` represents the entire line of text
+* ` $1 ` represents the first line of text
+* ` $34 ` represents the 34th line of text
+* ` $NF ` represents the last field
+ 
+
+Input Field separators :
+
+If you want awk to work with text that doesn’t use whitespace to separate fields, you have to tell it which character the text uses as the field separator. For example, the /etc/passwd file uses a colon (:) to separate fields.
+
+We would need to use that file and -F(separator string) option to tell awk to use the colon as the separator.
+
+Example:
+* `awk -F: '{print $1,$6}' /etc/passwd` - this output contains the name of the user account and the home folder 
+
+Awk pre-processing:
+
+If you need to create a title or a header for your result or so. You can use the BEGIN keyword to achieve this. It runs before processing the data.
+
+Example:
+* `awk 'BEGIN {print "Dennis Ritchie"} {print $0}' dennis_ritchie.txt `
  
 ## Archive,compress and uncompress files
  
