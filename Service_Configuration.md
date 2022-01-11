@@ -67,7 +67,7 @@ scp
 
 * Server used to manage IMAP protocol is dovecot
 
-  * `yum -y install dovecot`
+  * `apt install dovecot`
 
 * Basic configuration
 
@@ -117,13 +117,13 @@ scp
 ## Configure an HTTP server
 
 * Used server: Apache HTTP Server
-* `yum -y install httpd` will install server
-* `systemctl start httpd` will start server
-* `/etc/httpd/conf/httpd.conf` is the principal configuration file
+* `apt install apache2` will install server
+* `systemctl start apache2` will start server
+* `/etc/apache2/conf/apache2.conf` is the principal configuration file
   * `ServerName localhost` contains the local server name. 
     * **NOTE**: it must correspond to an IP. Simple solution is to modify /etc/hosts to insert a name-IP mapping
-* Virtual host can be created inserting a file *.conf* in `/etc/httpd/conf.d/`
-  * E.g. `/etc/httpd/conf.d/file.conf`
+* Virtual host can be created inserting a file *.conf* in `/etc/apache2/conf.d/`
+  * E.g. `/etc/apache/conf.d/file.conf`
 * The file structure can be copied from  `/usr/share/doc/httpd-2.4.6/httpd-vhosts.conf`
   * **NOTE**: The version depends by server version installed
 * Normally as *DocumentRoot*, directory that will contain site's files, it will be used a directory in `/var/www`
@@ -153,7 +153,7 @@ scp
 ## Configure a database server
 
 * Used database: MariaDB
-* `yum -y install mariadb mariadb-server` will install database
+* `apt install mariadb-client mariadb-server` will install database
 * `systemctl start mariadb` will start database
 * `mysql -u root -p` will connect to database as root database user
   * Default password is blank
@@ -195,7 +195,7 @@ scp
 
 
 
-* `yum install docker` It will install docker
+* `apt install docker` It will install docker
 * `systemctl start docker`It start docker
 * `docker version` to test if docker is working properly
 * `usermod -aG dockerroot user`
