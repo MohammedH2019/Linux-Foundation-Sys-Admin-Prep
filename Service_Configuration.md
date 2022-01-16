@@ -127,6 +127,11 @@ scp
 * The file structure can be copied from  `/usr/share/doc/httpd-2.4.6/httpd-vhosts.conf`
   * **NOTE**: The version depends by server version installed
 * Normally as *DocumentRoot*, directory that will contain site's files, it will be used a directory in `/var/www`
+* `sudo mkdir -p /var/www/music.com && sudo nano /var/www/music.com/index.html` - this will create the folder and file for the music.com web pag. Do not forgot to give the directory a 755 permisson /var/ww.
+* to create the virtual host for new sites . Copy the default.conf file from the sites-available folder and create a new one for the new host.
+* run ` sudo apache2ctl configtest ` to test for config errors 
+* run ` sudo a2ensite your_domain.conf ` to enable the conf file in the sites-available folder.
+* run ` sudo a2dissite 000-default.conf ` to disable the default sited defined.
 
 ## Configure HTTP server log files
 
