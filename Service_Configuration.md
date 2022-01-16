@@ -167,7 +167,7 @@ scp
 
 ## Restrict access to a web page
 
-* Edit `/etc/httpd/conf/httpd.conf` and change
+* Edit `/etc/httpd/conf/apache2.conf` and change
 
   ```bash
   <Directory "/var/www">
