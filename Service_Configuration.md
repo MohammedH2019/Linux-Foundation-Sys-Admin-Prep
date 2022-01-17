@@ -167,7 +167,7 @@ scp
 * ` create user 'dbadmin'@'localhost' identified by 'password`; 
   * It will create a user called dbadmin@localhost with the password set as password
 * `grant all on people.* to 'dbadmin'@localhost;
-  * it will grant user dbadmin@local host access to the people table
+  * it will grant user dbadmin@local host access to the people database
 
 ## Restrict access to a web page
 
