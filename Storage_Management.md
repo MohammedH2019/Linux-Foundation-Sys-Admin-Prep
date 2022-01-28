@@ -169,3 +169,75 @@ Automount
     * ro -> Read only
     * rw -> Read an write
     * relatime -> Modify file access time (atime) if file is changed or one time a day. Alternative, to reduce disk traffic, noatime can be used. This is useful with SSD to avoid not useful write.
+
+
+## Create and manage RAID devices
+
+Concepts:
+
+* Parity disk. It is used to provide fault tolerance. 
+* The spare device. It not take part of RAID and it is used only in case of a disk fault. In this case spare enter in the RAID and the content of lost disk is reconstructed and saved on it.
+
+
+
+* `yum -y install mdadm` installs software to manage RAID devices
+* RAID 0 - Striped - No spare
+
+  * `mdadm --create --verbose /dev/md0 --level=stripe --raid-devices=2 /dev/sdb1 /dev/sdc1`
+* RAID 1 - Mirror
+
+  * `mdadm --create --verbose /dev/md0 --level=1 --raid-devices=2 /dev/sdb1 /dev/sdc1`
+
+* RAID 5 - (1 parity + 1 spare)
+  * `mdadm --create --verbose /dev/md0 --level=5 --raid-devices=3 /dev/sdb1 /dev/sdc1`
+    `/dev/sdd1 --spare-devices=1 /dev/sde1`
+* RAID 6 - (2 parity + 1 spare)
+  * `mdadm --create --verbose /dev/md0 --level=6 --raid-devices=4 /dev/sdb1 /dev/sdc1`
+    `/dev/sdd1 /dev/sde --spare-devices=1 /dev/sdf1`
+
+* RAID 10 - (Stripe + Mirror + 1 spare)
+
+  * `mdadm --create --verbose /dev/md0 --level=10 --raid-devices=4 /dev/sd[b-e]1 --spare-devices=1 /dev/sdf1`
+
+     
+
+* `mdadm --detail /dev/md0` shows status of RAID device
+* To use device md0, format it and use as a classical device
+
+
+
+Monitoring RAID devices
+
+* `mdadm --assemble --scan`
+* `mdadm --detail --scan >> /etc/mdadm.conf`
+* `echo "MAILADDR root" >> /etc/mdadm.conf`
+* `systemctl start mdmonitor`
+* `systemctl enable mdmonitor`
+
+
+
+Add disk
+
+* `mdadm /dev/md0 --add /dev/sbc2`
+
+* `mdadm --grow --raid-devices=4 /dev/md0`
+
+  It adds a spare disk and after it grows array
+
+
+
+Remove disk
+
+* `mdadm /dev/md0 --fail /dev/sdc1 --remove /dev/sdc1`
+  
+  `mdadm --grow /dev/md0 --raid-devices=2`
+
+  It mark disk as failed and remove it. After the size of array must be adjusted
+
+
+
+Delete RAID
+
+* Unmount device
+* `mdadm --stop /dev/md0`
+* `mdadm --zero-superblock /dev/sbc2` It clean partition that, after, can be reused
