@@ -234,7 +234,16 @@ Remove disk
 
   It mark disk as failed and remove it. After the size of array must be adjusted
 
+Persistant Raid
 
+* `mdadm --detail --scan `
+   retrieve info about the raid 
+*  `vim /etc/mdadm/mdadm.conf`
+    copy the info from the previous command into the conf file 
+*  ` mdadm --assemble --scan `
+*  ` update-initramfs -u `
+    update the intial ram file so that the changes are picked up during the early boot process
+*  finally add the filesystem to the etc/fstap file
 
 Delete RAID
 
