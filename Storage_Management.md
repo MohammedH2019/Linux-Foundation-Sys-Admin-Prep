@@ -178,7 +178,7 @@ Concepts:
 * Parity disk. It is used to provide fault tolerance. 
 * The spare device. It not take part of RAID and it is used only in case of a disk fault. In this case spare enter in the RAID and the content of lost disk is reconstructed and saved on it.
 
-
+* Make sure that the paritioned disk is raid compatible by changing the type fd
 
 * `yum -y install mdadm` installs software to manage RAID devices
 * RAID 0 - Striped - No spare
