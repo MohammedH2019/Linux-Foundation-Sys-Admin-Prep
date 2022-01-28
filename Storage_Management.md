@@ -181,9 +181,9 @@ Concepts:
 * Make sure that the paritioned disk is raid compatible by changing the type fd
 
 * `yum -y install mdadm` installs software to manage RAID devices
-* RAID 0 - Striped - No spare
 
-  * `mdadm --create --verbose /dev/md0 --level=stripe --raid-devices=2 /dev/sdb1 /dev/sdc1`
+
+  * `mdadm --create --verbose /dev/md0 --level=stripe --raid-devices=0 /dev/sdb1 /dev/sdc1`
 * RAID 1 - Mirror
 
   * `mdadm --create --verbose /dev/md0 --level=1 --raid-devices=2 /dev/sdb1 /dev/sdc1`
