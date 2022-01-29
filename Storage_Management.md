@@ -79,6 +79,7 @@ Logical volume
 
 * `lvreduce -L -1G -r vgname/volumename ` reduce the logical volume *volumename* of one giga
 
+* once logical volume has been extended , you will need to resize the filesystem `resize2fx /dev/{volume group}/{logical volume}`
 ## Create and configure encrypted storage
 
 * To use encrypted storage a kernel module must be loaded
