@@ -279,3 +279,9 @@ NTP
 * Configuration file `/etc/ntp.conf`
 * `server` parameters are servers that are used as source of synchronization
 * `ntpq -p` check current status of synchronization
+
+
+timedatectl :
+* to enable ntp run the following command : ` timedatectl set-ntp yes `
+* to change timezone run the following command : `timedatectl set-timezone {zone}`
+* check all the timezone: ` timedatectl list-timezone`
