@@ -187,6 +187,10 @@ References:
 * [https://debian-handbook.info/browse/da-DK/stable/sect.firewall-packet-filtering.html](https://debian-handbook.info/browse/da-DK/stable/sect.firewall-packet-filtering.html)
 
 
+Persistant IP tables changes:
+* install ip tables persistent package ` sudo apt install iptables-persistent` 
+* add the iptables to the relevant config file ` sudo iptables-save > /etc/iptables/rules.v4 `
+* 
 
 ## Start, stop, and check the status of network services
 
