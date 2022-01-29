@@ -181,6 +181,12 @@ Automount
     * relatime -> Modify file access time (atime) if file is changed or one time a day. Alternative, to reduce disk traffic, noatime can be used. This is useful with SSD to avoid not useful write.
 
 
+Mount Label :
+
+* create a label for the disk parition using this command : ` e2label /dev/{disk} {label name}`
+* mount the label to a directory : ` mount -L {label} /mnt/{directory} `
+* Add the changes to the fstab config file
+
 ## Create and manage RAID devices
 
 Concepts:
