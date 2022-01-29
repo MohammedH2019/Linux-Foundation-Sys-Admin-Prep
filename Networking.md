@@ -108,36 +108,6 @@ References:
 
 * `iptables` will create rules for chains that will be processed in an orderly way
 
-* `firewalld` is a service that use iptables to manage firewalls rules
-
-* `firewall-cmd` is the command to manage firewalld
-
-
-
-Firewalld
-
-* firewalld is enabled by default in CentOS
-* It works with zone, *public* is default zone
-* The *zone* is applied to an interface
-  * The idea is that we can have safe zone, e.g. bound to an internal interface, and unsafe zone, e.g. bound to external interfaces internet facing
-* `firewall-cmd --list-all` show current configuration
-  * services -> service that are allowed to use interface
-  * ports -> ports that are allowed to use interface
-* `firewall-cmd --get-services` shows the list of default services
-  * The services are configured in `/urs/lib/firewalld/services`
-  * `/urs/lib/firewalld/services` contains xml file with service configuration
-
-* `firewall-cmd --add-service service` add service to current configuration
-  * **NOTE**: it isn't a permanent configuration
-* `firewall-cmd --reload` reload firewalld configuration
-  * **NOTE**: If a service was added with previous command now it is disappeared
-* `firewall-cmd --add-service service --permanent`  add service to configuration as permanent
-  * **NOTE**: Now if firewalld configuration is reloaded service it is still present
-* `firewall-cmd --add-port 4000-4005/tcp` Open TCP ports from 4000 to 4005
-* `firewall-cmd --permanent --direct --add-rule ipv4 filter OUTPUT 1 -p tcp -m tcp --dport 80 -j ACCEPT`
-  * Add a firewall rule using iptables syntax
-  * This add permanently a rule as first in OUTPUT chain to allow connections to TCP destination port 80
-
 
 
 iptables
