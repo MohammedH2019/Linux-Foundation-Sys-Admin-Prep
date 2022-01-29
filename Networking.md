@@ -36,8 +36,7 @@
         - 192.168.121.221/24
       gateway4: 192.168.121.1
       nameservers:
-          addresses: [8.8.8.8, 1.1.1.1]
-`
+          addresses: [8.8.8.8, 1.1.1.1]`
 
 * The hostname can be changed editing `/etc/hostname`
 
