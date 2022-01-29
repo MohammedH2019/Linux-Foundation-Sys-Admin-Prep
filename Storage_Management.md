@@ -182,6 +182,7 @@ Automount
     * rw -> Read an write
     * relatime -> Modify file access time (atime) if file is changed or one time a day. Alternative, to reduce disk traffic, noatime can be used. This is useful with SSD to avoid not useful write.
 
+example : `  mount /dev/nvme2n1p2 -o ro /mnt/test/ ` readonly mount
 
 Mount Label :
 
