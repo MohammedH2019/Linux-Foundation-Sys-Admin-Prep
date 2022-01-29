@@ -26,7 +26,18 @@
   * `ip addr add 192.168.0.2/24 dev eth0` Assign IP 192.168.0.2/24 to interface eth0
   * `ip link set eth0 up` Restart interface eth0
 
-
+`network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    ens3:
+      dhcp4: no
+      addresses:
+        - 192.168.121.221/24
+      gateway4: 192.168.121.1
+      nameservers:
+          addresses: [8.8.8.8, 1.1.1.1]
+`
 
 * The hostname can be changed editing `/etc/hostname`
 
