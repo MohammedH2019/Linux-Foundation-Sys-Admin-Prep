@@ -119,6 +119,15 @@ Close device
 * `cryptsetup close namenewdevice`close *namenewdevice*
 
 
+Cryptsetup on disk:
+
+* Create an encrypted partition : ` cryptsetup -y luksFormat {path/parition} `
+  * you will need to create a passphrase on the intial creation.
+* Open an encrypted partition : ` cryptsetup luksOpen {/path/partition} fsname `
+* create a filesystem to the unlocked box : ` mkfs.ext4 /dev/mapper/{name of fsname} `
+* Mount the filesystem : ` dev/mapper/fsname /mnt/encrypted
+* To close the box , you will need unmount the filesystem. : `umount /mnt/encrypted`
+* close the box : ` cryptsetup lukeClose {fsname} 
 
 Automount
 
