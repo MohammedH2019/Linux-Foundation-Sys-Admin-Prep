@@ -251,3 +251,26 @@ Delete RAID
 * Unmount device
 * `mdadm --stop /dev/md0`
 * `mdadm --zero-superblock /dev/sbc2` It clean partition that, after, can be reused
+
+## Create a Swap parition or swap file
+
+Creating Swap parition
+
+* create parition block using fdisk 
+* set the parition block type to swap (82)
+* create file system for the swap parition block using this command ` mkswap /dev/{parition block}`
+* activate swap parition using this command ` swapon /dev/{parition block}`
+* check the status of the swap parition `swapon -s `
+* Mount the swap space permanently in the fstab config file 
+  ` /dev/sdc1   swap   swap  defaults  0 0 `
+  
+  
+  Creating a swap file 
+  
+  * create a swap file using this command ` sudo dd if=/dev/zero of=/swapfile bs=1024 count=1048576` 1G of swap spac 
+  * change the permission of the file ` sudo chmod 600 /swapfile` as only root user can read and write to a swap file 
+  * Set up file as linux swap ` sudo mkswap /swapfile `
+  *  enable swap `sudo swapon /swapfile`
+  *  Mount the swap file permanently 
+  *  change the swappiness in this file `  cat /proc/sys/vm/swappiness `
+
