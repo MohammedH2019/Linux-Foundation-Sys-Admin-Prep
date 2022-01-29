@@ -6,6 +6,8 @@
 
 * `fdisk` it is used to manage disk partition in MBR modality
 
+* 'blkid' allows you to view uuid of a block device.
+
   * E.g. `fdisk /dev/sda`
 
     This will open an interactive menu that will permit to show current status of partitions or create a delete new partitions
