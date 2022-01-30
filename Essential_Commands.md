@@ -164,7 +164,8 @@ First column shows  which user is logged into system and the second one to which
 
     Search pattern ignoring case inside file in path/* and path subdirectories. Show only file name
 
-
+example :
+`grep -E '^t' file1.txt | grep -E 'crazy$` grep for line starting with t and the ends with crazy
 
 Regular Expressions
 
