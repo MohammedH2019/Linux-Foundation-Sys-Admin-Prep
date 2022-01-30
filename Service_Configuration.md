@@ -253,3 +253,4 @@ scp
 * `docker commit containername`
   * Create a new image using based on the content of current running container. E.g It will contain software that was installed in container
 
+* `docker run --name apache2 -p 8080:80 httpd:2.4`
