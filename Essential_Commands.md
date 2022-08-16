@@ -277,12 +277,20 @@ Example:
 * `tar` Save many files into a single file
 
   File permissions are maintained by default only for file users. For other user I must explicit say to maintain permission during decompression using `-p` parameter
-
-  * `tar jcfv file.tar.bz2 *`
+  
+  * `tar cvf file.tar /home/cloud_user/toarchives`
+     create a tarball in the specified directory
+  
+   
+  * `tar cvfz file.tar.gz /home/cloud_user/toarchives`
+     create a gzip file in the specified directory
+     
+  
+  * `tar jcvf file.tar.bz2 *`
 
     Save all files of current directory in new bzip2 compressed file called file.tar.bz2
 
-  * `tar jxfv file.tar.bz2`
+  * `tar jxvf file.tar.bz2`
 
     Extract content of file.tar.bz2
  
