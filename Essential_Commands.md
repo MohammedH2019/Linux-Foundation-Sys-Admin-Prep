@@ -170,7 +170,24 @@ First column shows  which user is logged into system and the second one to which
    
  * `ls -li`   
    outputs the inode number for all the files in the current directory
+
+ ## lstattr +chattr command
+ 
+ lstattr command allows you to view attributes for a given file and directories.
+ chattr command allows you to set attributes to a given file.
+ 
+ * `lstattr -R `
+   Recursively list attributes of directories and their contents
+ * `lstattr file1 `
+   Recursively list attributes of a given file and their contents  
+ * `sudo chattr +i file1 `
+   The file will be marked as "immutable", meaning its data (and some vital metadata) cannot be changed, even by root, until the attribute is unset.
+ * `sudo chattr +a file1 `  
+   The file will be marked  as appended meaning that it can only be appended.  
+ * `sudo chattr -i file1 `  
+   The immutable attribute will be removed from this file(unset the attribute)
    
+
 
 ## Grep command + regex
 
