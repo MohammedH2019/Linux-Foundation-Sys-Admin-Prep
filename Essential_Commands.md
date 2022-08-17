@@ -144,6 +144,34 @@ First column shows  which user is logged into system and the second one to which
 
   * Show all files that have been changed in the last 60 min
 
+
+## Diff,Comm and CMP command 
+
+ * `diff  ../dir1/ ../dir2`
+   compares two directories and files  and checks for differences
+   
+   
+ * `comm  file1 file2`
+   compares line by line two files that are sorted. File has to be sorted before running this command
+   
+ * `cmp  file1 file2`
+   compares two  files byte by byte and if there are any differnce it will print out the first differene
+   
+ ## Hard Link and Soft Link
+ 
+ Hard link is a direct pointer to a file and can only be a file and shares the same inode as the source.
+ 
+ Soft link is a redirect link to a file such as a alias.Soft link can be a file or a directory.
+
+ * `ln  file1 file2hardlink`
+   creates a hardlink for the file1
+ * `ln  -s  file1 file2softlink`
+   creates a hardlink for the file1
+   
+ * `ls -li`   
+   outputs the inode number for all the files in the current directory
+   
+
 ## Grep command + regex
 
  Search pattern inside the strings of the files in path/*. Show file name and row matching pattern
