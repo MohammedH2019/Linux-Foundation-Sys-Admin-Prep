@@ -187,8 +187,20 @@ First column shows  which user is logged into system and the second one to which
  * `sudo chattr -i file1 `  
    The immutable attribute will be removed from this file(unset the attribute)
    
-
-
+ ## nice and renice  command
+ Nice command helps in execution of a process with changed being made in the scheduling priority. Running this command launches a user-defined scheduing priority. If user provides a higher priority , then the kernal will allocate more CPU time to that specific process.
+ Renice commnad allows you to change the scheduling priority of an already running process. 
+ 
+  * `ps -el | grep terminal` 
+    This allows you to view nice value of the terminal process
+  * `nice -10  terminal`   
+    This set a priortiy of 10 to the terminal process
+  * `nice --10  terminal`   
+    This set a negative priortiy of 10 to the terminal process
+  * `sudo renice -n 15  -p 77982`   
+    This will change the priority of a running process   
+    
+    
 ## Grep command + regex
 
  Search pattern inside the strings of the files in path/*. Show file name and row matching pattern
