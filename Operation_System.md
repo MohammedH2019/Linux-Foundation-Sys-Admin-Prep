@@ -369,4 +369,10 @@ check cron service:
   show's packages/program details in a debian system 
 Best to upgrade existings packages before installing.  
   
-
+## Verify the integrity and availabity of resources
+To check mounted file system, run this command:
+* ` df -h `
+To check if filesystem issue , unmount the filesystem before running this command:
+* ` sudo fsck /dev/filesystem `
+To check fielsystem during reboot , run this command:
+* ` sudo tune2fs -c 1 /dev/filesystem `
