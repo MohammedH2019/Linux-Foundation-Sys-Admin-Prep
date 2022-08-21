@@ -354,3 +354,19 @@ Check cron logs:
 check cron service:
 * `service cron status`
 * `sudo less /var/log/syslogs | grep -i cron`
+
+## Update and Manage Software packages
+
+* ` sudo apt install `
+  install's packages/program in a debian system
+* `sudo apt remove `
+  removes's packages/program in a debian system  
+* `sudo apt upgrade `
+  upgrade/refreshes packages/program in a debian system repo
+* `sudo apt search `
+  searches packages/program in a debian system repo  
+* `sudo apt show `
+  show's packages/program details in a debian system 
+Best to upgrade existings packages before installing.  
+  
+
