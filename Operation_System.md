@@ -376,3 +376,26 @@ To check if filesystem issue , unmount the filesystem before running this comman
 * ` sudo fsck /dev/filesystem `
 To check fielsystem during reboot , run this command:
 * ` sudo tune2fs -c 1 /dev/filesystem `
+
+## Change or Modify Linux kernal Runtime parameters persistant/non-persistant
+We can modify the behaviour of the system by using the command line to change runtime kernal parameters as a one-time modification or permanently by editing config file.
+/proc directory handles system info's and also kernal and memory information. Particularly /proc/sys directory is where you will find all the information about devices,drivers and some kernal features.
+Within the /proc/sys there are many directories and each of them will contain other subdirectories where the values for each parameter category are maintained. 
+For example the `fs` subdirectory handles values for filesystem config.
+
+To modify the kernal runtime parameters, it will require to use the sysctl command. 
+
+To view all the complete list of kernal parameters , run this command:
+* ` sysctl -a `
+
+To change or modify the the parameters, you can run this command:
+* ` sysctl -w net.ipv4.ip_forward=0 `
+  This will disable packet forwarding functionality in our system. This is a non-persistant change and will disappear when the system is rebooted
+To make this a permanment change , it requires a change to be made in the /etc/sysctl.conf file with the desired value changed. 
+* ` net.ipv4.ip_forward=0`
+   This line will need to be added to the /etc/sysctl.conf file and then run this following command:
+* ` sysctl -p`
+  This will apply the changes made in the /etc/sysctl.conf   
+   
+
+
